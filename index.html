@@ -15,53 +15,61 @@
             flex-direction: column;
             height: 100vh;
         }
-
+        
         .desktop {
             flex: 1;
             display: flex;
             justify-content: flex-start;
             align-items: flex-start;
-            background: linear-gradient(45deg, #1e1e1e, #353535);
+            background: linear-gradient(45deg, #1e1e1e, #aca9a9);
             padding: 10px;
             position: relative;
-            background-image: url("https://cache.desktopnexus.com/thumbseg/1723/1723075-bigthumbnail.jpg");
+            background-color: black;
             background-repeat: no-repeat;
             background-size: cover;
+            overflow: hidden;
         }
-
         .icon-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+            display: flex; 
+            flex-direction: column; 
+            flex-wrap: wrap;
+            height: 100%;
+            gap: 20px; 
+            padding: 10px;
+            align-content: flex-start; 
+            overflow-y: hidden; 
         }
-
+        
+        
         .icon {
             text-align: center;
             cursor: pointer;
-            width: 80px;
+            width: 50px;
             transition: transform 0.3s ease;
         }
-
+        
         .icon img {
-            width: 45px;
-            height: 45px;
+            width: 30px;
+            height: 30px;
         }
-
+        
         .icon span {
             display: block;
             margin-top: 5px;
-            font-size: 14px;
+            font-size: 12px;
             color: white;
         }
-
+        
         .icon:hover {
             transform: scale(1.2);
         }
-
+        
+        
         .icon:hover span {
             color: white;
         }
-
+        
+        
         .taskbar {
             position: relative;
             bottom: 0;
@@ -74,7 +82,7 @@
             box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.5);
             border-top: 1px solid #3a3a3a;
         }
-
+        
         .taskbar button {
             margin: 0 10px;
             background: #2a2a2a;
@@ -85,19 +93,19 @@
             cursor: pointer;
             font-size: 14px;
         }
-
+        
         .taskbar button:hover {
             background: #444;
         }
-
+        
         .taskbar .start-menu {
             flex-grow: 1;
         }
-
+        
         .taskbar .clock {
             margin-right: 10px;
         }
-
+        
         .modal {
             position: fixed;
             top: 0;
@@ -109,11 +117,11 @@
             justify-content: center;
             align-items: center;
         }
-
+        
         .modal.active {
             display: flex;
         }
-
+        
         .modal-content {
             background: #333;
             padding: 20px;
@@ -121,17 +129,17 @@
             text-align: center;
             position: relative;
         }
-
+        
         #camera-feed {
             width: 100%;
             height: 100%;
             background: #000;
         }
-
+        
         .button-group {
             margin-top: 10px;
         }
-
+        
         .button-group button {
             background: #444;
             padding: 10px;
@@ -140,22 +148,22 @@
             cursor: pointer;
             margin: 5px;
         }
-
+        
         .button-group button:hover {
             background: #666;
         }
-
+        
         #snapshot-canvas {
             display: none;
         }
-
+        
         .snapshot-image {
             display: none;
             max-width: 100%;
             max-height: 400px;
             margin-top: 20px;
         }
-
+        
         .voice-recording-container {
             display: flex;
             flex-direction: column;
@@ -164,7 +172,7 @@
             padding: 10px;
             gap: 10px;
         }
-
+        
         .voice-recording-container button {
             padding: 10px;
             font-size: 16px;
@@ -174,11 +182,11 @@
             border-radius: 5px;
             cursor: pointer;
         }
-
+        
         .voice-recording-container button:hover {
             background-color: #666;
         }
-
+        
         .audio-player {
             margin-top: 20px;
         }
@@ -195,7 +203,7 @@
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
         }
-
+        
         .notepad textarea {
             width: 100%;
             height: 80%;
@@ -205,7 +213,7 @@
             border-radius: 5px;
             padding: 10px;
         }
-
+        
         .notepad button {
             padding: 10px 15px;
             margin: 5px;
@@ -215,102 +223,320 @@
             border-radius: 5px;
             cursor: pointer;
         }
-
+        
         .notepad button:hover {
             background: #666;
         }
         
-.modal {
-    display: none; 
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
-    justify-content: center;
-    align-items: center;
-}
-
-.modal.active {
-    display: flex;
-}
-
+        .modal {
+        display: none; 
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); 
+        justify-content: center;
+        align-items: center;
+        }
         
-
-.modal {
-    display: none; 
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); 
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.modal.active {
-    display: flex; 
-}
-
-
-#notepad-content {
-    width: 60%;
-    height: 60%;
-    font-size: 16px;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-
-#save-notepad, #close-notepad {
-    margin-top: 15px;
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: white;
-    margin-right: 10px;
-}
-
-#save-notepad {
-    background-color: #28a745;
-}
-
-#close-notepad {
-    background-color: #dc3545;
-}
-win{color:white}
-
+        .modal.active {
+        display: flex;
+        }
+        
+        
+        
+        .modal {
+        display: none; 
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7); 
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        }
+        
+        .modal.active {
+        display: flex; 
+        }
+        
+        
+        #notepad-content {
+        width: 60%;
+        height: 60%;
+        font-size: 16px;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        }
+        
+        
+        #save-notepad, #close-notepad {
+        margin-top: 15px;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        margin-right: 10px;
+        }
+        
+        #save-notepad {
+        background-color: #28a745;
+        }
+        
+        #close-notepad {
+        background-color: #dc3545;
+        }
+        win{color:white}
+        .calculator-container {
+        background: #2a2a2a;
+        padding: 20px;
+        border-radius: 10px;
+        width: 300px;
+        }
+        
+        .calculator-screen {
+        background: #444;
+        color: white;
+        padding: 10px;
+        text-align: right;
+        font-size: 24px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        min-height: 40px;
+        }
+        
+        .calculator-buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
+        }
+        
+        .calculator-buttons button {
+        padding: 15px;
+        font-size: 18px;
+        border: none;
+        background: #555;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        }
+        
+        .calculator-buttons button:hover {
+        background: #666;
+        }
+        
+        .calculator-buttons .operator {
+        background: #ff9500;
+        }
+        
+        .calculator-buttons .equals {
+        background: #ff5733;
+        }
+        
+        /* Calendar Styles */
+        .calendar-container {
+        background: #2a2a2a;
+        padding: 20px;
+        border-radius: 10px;
+        width: 380px;
+        }
+        
+        .calendar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        }
+        
+        .calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 5px;
+        }
+        
+        .calendar-cell {
+        padding: 10px;
+        text-align: center;
+        background: #444;
+        border-radius: 5px;
+        cursor: pointer;
+        }
+        
+        .calendar-cell:hover {
+        background: #555;
+        }
+        
+        .calendar-cell.today {
+        background: #ff5733;
+        }
+        
+        .calendar-weekday {
+        font-weight: bold;
+        background: #333;
+        }
+        
+        /* Todo Widget Styles */
+        .todo-container {
+        background: #2a2a2a;
+        padding: 20px;
+        border-radius: 10px;
+        width: 300px;
+        }
+        
+        .todo-input {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 10px;
+        }
+        
+        .todo-input input {
+        flex: 1;
+        padding: 8px;
+        border: none;
+        border-radius: 5px;
+        background: #444;
+        color: white;
+        }
+        
+        .todo-list {
+        max-height: 300px;
+        overflow-y: auto;
+        }
+        
+        .todo-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px;
+        background: #444;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        }
+        
+        .todo-item.completed {
+        opacity: 0.7;
+        text-decoration: line-through;
+        }
+        
+        .todo-item input[type="checkbox"] {
+        margin: 0;
+        }
+        
+        .todo-item button {
+        background: #ff5733;
+        border: none;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 3px;
+        cursor: pointer;
+        }
+        .terminal-header {
+            background: #333;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+        }
+        
+        .terminal-header span {
+            font-weight: bold;
+        }
+        
+        .close-btn {
+            cursor: pointer;
+            font-size: 18px;
+        }
+        
+        .terminal-body {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            font-family: monospace;
+            background-color: #000;
+            color: #00ff00;
+        }
+        
+        .terminal-input {
+            background: #000;
+            color: #00ff00;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        
+        .terminal-input:focus {
+            outline: none;
+        }
+        .modalu{
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modalu-content{
+            background: #1e1e1e;
+            color: #00ff00;
+            width: 80%;
+            max-width: 600px;
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
     </style>
 </head>
 <body>
     <div class="desktop">
         <div class="icon-container">
             <div class="icon" id="camera-icon">
-                <img src="https://cdn0.iconfinder.com/data/icons/apple-apps/100/Apple_Camera-512.png" alt="Camera">
+                <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/camera-512.png" alt="Camera">
                 <span>Camera</span>
             </div>
             <div class="icon" id="voice-recorder-icon">
-                <img src="https://i.pinimg.com/236x/b0/7e/3e/b07e3ecb307927191bd0d05732a2c260.jpg" alt="Voice Recorder">
+                <img src="https://cdn0.iconfinder.com/data/icons/3-colors-outline/500/Recorder-1024.png" alt="Voice Recorder">
                 <span>Voice Recorder</span>
             </div>
             <div class="icon" id="chrome-icon">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Google_Chrome_icon_%28February_2022%29.svg/2048px-Google_Chrome_icon_%28February_2022%29.svg.png" alt="Chrome">
-                <span>Chrome</span>
-            </div>
-            <div class="icon">
-                <img src="self.jpg" alt="About me">
-                <span>About me</span>
-            </div>
+                <img src="https://cdn3.iconfinder.com/data/icons/macosxstyle/macosxstyle_png/512/Safari.png" alt="Chrome">
+                <span>Browser</span>
+            </div>  
             <div class="icon" id="notepad-icon">
-                <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/notepad-512.png" alt="Notepad">
+                <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/notepad-1024.png" alt="Notepad">
                 <span>Notepad</span>
+            </div>
+            <div class="icon" id="calculator-icon">
+                <img src="https://cdn4.iconfinder.com/data/icons/business-1219/24/Calculator-512.png" alt="Calculator">
+                <span>Calculator</span>
+            </div>
+            <div class="icon" id="calendar-icon">
+                <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/calendar-128.png" alt="Calendar">
+                <span>Calendar</span>
+            </div>
+            <div class="icon" id="todo-icon">
+                <img src="https://cdn2.iconfinder.com/data/icons/xomo-basics/128/document-03-128.png" alt="Todo">
+                <span>Todo</span>
+            </div>
+            <div class="icon" id="t-icon">
+                <img src="https://cdn1.iconfinder.com/data/icons/ionicons-sharp-vol-2/512/terminal-sharp-512.png" alt="Terminal">
+                <span>Terminal</span>
             </div>
         </div>
     </div>
@@ -341,6 +567,7 @@ win{color:white}
     </div>
 
     
+    
     <div class="modal" id="voice-recorder-modal">
         <div class="voice-recording-container">
             <button id="start-recording">Start Recording</button>
@@ -362,8 +589,73 @@ win{color:white}
         <button id="save-notepad">Save</button>
         <button id="close-notepad">Close</button>
     </div>
-    <script>
-        const cameraIcon = document.getElementById('camera-icon');
+    <div class="modal" id="calculator-modal">
+        <div class="calculator-container">
+            <div class="calculator-screen" id="calc-screen">0</div>
+            <div class="calculator-buttons">
+                <button onclick="clearCalc()">C</button>
+                <button onclick="appendOp('(')">(</button>
+                <button onclick="appendOp(')')">)</button>
+                <button class="operator" onclick="appendOp('/')">/</button>
+                <button onclick="appendNum('7')">7</button>
+                <button onclick="appendNum('8')">8</button>
+                <button onclick="appendNum('9')">9</button>
+                <button class="operator" onclick="appendOp('*')">×</button>
+                <button onclick="appendNum('4')">4</button>
+                <button onclick="appendNum('5')">5</button>
+                <button onclick="appendNum('6')">6</button>
+                <button class="operator" onclick="appendOp('-')">-</button>
+                <button onclick="appendNum('1')">1</button>
+                <button onclick="appendNum('2')">2</button>
+                <button onclick="appendNum('3')">3</button>
+                <button class="operator" onclick="appendOp('+')">+</button>
+                <button onclick="appendNum('0')">0</button>
+                <button onclick="appendNum('.')">.</button>
+                <button onclick="backspace()">←</button>
+                <button class="equals" onclick="calculate()">=</button>
+            </div>
+            <button style="margin-top: 10px; width: 100%;" onclick="document.getElementById('calculator-modal').classList.remove('active')">Close</button>
+        </div>
+    </div>
+
+
+    <div class="modal" id="calendar-modal">
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <button onclick="changeMonth(-1)">←</button>
+                <span id="calendar-month"></span>
+                <button onclick="changeMonth(1)">→</button>
+            </div>
+            <div class="calendar-grid" id="calendar-grid"></div>
+            <button style="margin-top: 10px; width: 100%;" onclick="document.getElementById('calendar-modal').classList.remove('active')">Close</button>
+        </div>
+    </div>
+
+
+    <div class="modal" id="todo-modal">
+        <div class="todo-container">
+            <div class="todo-input">
+                <input type="text" id="todo-input" placeholder="Add new task...">
+                <button onclick="addTodo()">Add</button>
+            </div>
+            <div class="todo-list" id="todo-list"></div>
+            <button style="margin-top: 10px; width: 100%;" onclick="document.getElementById('todo-modal').classList.remove('active')">Close</button>
+        </div>
+    </div>
+    <div class="modalu" id="terminal-modal">
+        <div class="modalu-content">
+            <div class="terminal-header">
+                <span>Terminal</span>
+                <span class="close-btn" id="close-btn">&times;</span>
+            </div>
+            <div class="terminal-body" id="terminal-body">
+                Welcome to the ManOS Terminal! Type a command (e.g., "/joke", "/cat", "/clear",/help).<br>
+            </div>
+            <input type="text" class="terminal-input" id="terminal-input" placeholder="Enter command here...">
+        </div>
+    </div>
+<script>
+    const cameraIcon = document.getElementById('camera-icon');
         const cameraModal = document.getElementById('camera-modal');
         const closeModal = document.getElementById('close-modal');
         const cameraFeed = document.getElementById('camera-feed');
@@ -513,18 +805,18 @@ win{color:white}
         
             
             notepadIcon.addEventListener('click', () => {
-                notepadModal.classList.add('active'); // Add 'active' class to show modal
+                notepadModal.classList.add('active');
             });
         
    
             closeNotepadButton.addEventListener('click', () => {
-                notepadModal.classList.remove('active'); // Remove 'active' class to hide modal
+                notepadModal.classList.remove('active'); 
             });
         
           
             saveNotepadButton.addEventListener('click', () => {
                 const content = notepadContent.value;
-                localStorage.setItem('notepadContent', content); // Save content in localStorage
+                localStorage.setItem('notepadContent', content); 
                 alert('Notepad content saved!');
             });
         
@@ -532,11 +824,234 @@ win{color:white}
             window.addEventListener('load', () => {
                 const savedContent = localStorage.getItem('notepadContent');
                 if (savedContent) {
-                    notepadContent.value = savedContent; // Set saved content in the textarea
+                    notepadContent.value = savedContent; 
                 }
             });
         });
+        const calcScreen = document.getElementById('calc-screen');
+        let calculation = '0';
+
+        document.getElementById('calculator-icon').addEventListener('click', () => {
+            document.getElementById('calculator-modal').classList.add('active');
+        });
+
+        function appendNum(num) {
+            if (calculation === '0') {
+                calculation = num;
+            } else {
+                calculation += num;
+            }
+            calcScreen.textContent = calculation;
+        }
+
+        function appendOp(op) {
+            calculation += op;
+            calcScreen.textContent = calculation;
+        }
+
+        function clearCalc() {
+            calculation = '0';
+            calcScreen.textContent = calculation;
+        }
+
+        function backspace() {
+            calculation = calculation.slice(0, -1);
+            if (calculation === '') calculation = '0';
+            calcScreen.textContent = calculation;
+        }
+
+        function calculate() {
+            try {
+                calculation = eval(calculation).toString();
+                calcScreen.textContent = calculation;
+            } catch (e) {
+                calcScreen.textContent = 'Error';
+                calculation = '0';
+            }
+        }
+
+ 
+        const calendarIcon = document.getElementById('calendar-icon');
+        const calendarMonth = document.getElementById('calendar-month');
+        const calendarGrid = document.getElementById('calendar-grid');
+        let currentDate = new Date();
+
+        calendarIcon.addEventListener('click', () => {
+            document.getElementById('calendar-modal').classList.add('active');
+            renderCalendar();
+        });
+
+        function renderCalendar() {
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth();
+            const firstDay = new Date(year, month, 1);
+            const lastDay = new Date(year, month + 1, 0);
+            const today = new Date();
+
+            calendarMonth.textContent = `${firstDay.toLocaleString('default', { month: 'long' })} ${year}`;
+            calendarGrid.innerHTML = '';
+
+
+            ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].forEach(day => {
+                const cell = document.createElement('div');
+                cell.className = 'calendar-cell calendar-weekday';
+                cell.textContent = day;
+                calendarGrid.appendChild(cell);
+            });
+
+
+            for (let i = 0; i < firstDay.getDay(); i++) {
+                const cell = document.createElement('div');
+                cell.className = 'calendar-cell';
+                calendarGrid.appendChild(cell);
+            }
+
+       
+            for (let day = 1; day <= lastDay.getDate(); day++) {
+                const cell = document.createElement('div');
+                cell.className = 'calendar-cell';
+                if (day === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+                    cell.className += ' today';
+                }
+                cell.textContent = day;
+                calendarGrid.appendChild(cell);
+            }
+        }
+
+        function changeMonth(delta) {
+            currentDate.setMonth(currentDate.getMonth() + delta);
+            renderCalendar();
+        }
+
+        const todoIcon = document.getElementById('todo-icon');
+        const todoList = document.getElementById('todo-list');
+        const todoInput = document.getElementById('todo-input');
+        let todos = JSON.parse(localStorage.getItem('todos') || '[]');
+
+        todoIcon.addEventListener('click', () => {
+            document.getElementById('todo-modal').classList.add('active');
+            renderTodos();
+        });
+
+        function renderTodos() {
+            todoList.innerHTML = '';
+            todos.forEach((todo, index) => {
+                const item = document.createElement('div');
+                item.className = `todo-item ${todo.completed ? 'completed' : ''}`;
+                item.innerHTML = `
+                    <input type="checkbox" ${todo.completed ? 'checked' : ''} onchange="toggleTodo(${index})">
+                    <span>${todo.text}</span>
+                    <button onclick="deleteTodo(${index})">×</button>
+                `;
+                todoList.appendChild(item);
+            });
+            localStorage.setItem('todos', JSON.stringify(todos));
+        }
+
+        function addTodo() {
+            const text = todoInput.value.trim();
+            if (text) {
+                todos.push({ text, completed: false });
+                todoInput.value = '';
+                renderTodos();
+            }
+        }
+
+        function toggleTodo(index) {
+            todos[index].completed = !todos[index].completed;
+            renderTodos();
+        }
+
+        function deleteTodo(index) {
+            todos.splice(index, 1);
+            renderTodos();
+        }
+
+        todoInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') addTodo();
+        });
+
+
+        const terminalIcon = document.getElementById('t-icon');
+        const terminalModal = document.getElementById('terminal-modal');
+        const closetModal = document.getElementById('close-btn');
+        const terminalBody = document.getElementById('terminal-body');
+        const terminalInput = document.getElementById('terminal-input');
+        const jokes = [
+            "Why don’t skeletons fight each other? They don’t have the guts!",
+            "Why did the scarecrow win an award? Because he was outstanding in his field!",
+            "Why don’t oysters donate to charity? Because they are shellfish!",
+            "Why do seagulls fly over the ocean? Because if they flew over the bay, they’d be bagels!",
+            "Why don’t eggs tell jokes? They’d crack each other up!",
+            "What do you call fake spaghetti? An impasta!",
+            "Why did the math book look sad? Because it had too many problems.",
+            "What do you call cheese that isn’t yours? Nacho cheese!",
+            "Why did the bicycle fall over? Because it was two-tired!",
+            "What do you call a factory that makes okay products? A satisfactory!",
+            "Why can’t your nose be 12 inches long? Because then it would be a foot!",
+            "Why did the golfer bring two pairs of pants? In case he got a hole in one!",
+            "What do you call a belt made of watches? A waist of time!",
+            "Why was the math teacher late to work? She took the rhombus.",
+            "Why did the stadium get hot after the game? All the fans left!",
+            "Why did the tomato turn red? Because it saw the salad dressing!",
+            "What do you call a snowman with a six-pack? An abdominal snowman!",
+            "Why do cows wear bells? Because their horns don’t work!",
+            "What do you call a boomerang that doesn’t come back? A stick!",
+            "Why don’t scientists trust atoms? Because they make up everything!"
+        ];
         
-    </script>
+        terminalIcon.addEventListener('click', () => {
+            terminalModal.style.display = 'flex';
+            terminalInput.focus();
+        });
+
+        closetModal.addEventListener('click', () => {
+            terminalModal.style.display = 'none';
+        });
+
+        terminalInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                const command = terminalInput.value.trim();
+                terminalInput.value = '';
+
+                switch (command.toLowerCase()) {
+                    case '/joke':
+                        const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
+                        appendToTerminal(randomJoke);
+                        break;
+                    case '/cat':
+                        appendToTerminal('Meow! 😺 Here\'s a virtual cat!');
+                        break;
+                    case '/clear':
+                        terminalBody.innerHTML = '';
+                        break;
+                    case '/help':
+                        appendToTerminal('Available commands: /joke, /cat, /clear, /help,/yap');
+                    break;
+                    case '/yap':
+                        appendToTerminal('Yapscript coming soon!!!!!!!!!!!!!!!');
+                        break;
+                    default:
+                        appendToTerminal(`Unknown command: ${command}. Try "/help".`);
+                }
+            }
+        });
+
+        function appendToTerminal(text) {
+            const newLine = document.createElement('div');
+            newLine.textContent = text;
+            terminalBody.appendChild(newLine);
+            terminalBody.scrollTop = terminalBody.scrollHeight;
+        }
+
+        window.addEventListener('click', (e) => {
+            if (e.target === terminalModal) {
+                terminalModal.style.display = 'none';
+            }
+        });
+
+        
+        
+</script>
 </body>
 </html>
