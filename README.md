@@ -31,6 +31,7 @@ https://www.iconfinder.com/icons/3336962/recorder_sound_tape_voice_icon
 Camera - Creative Commons
 https://www.iconfinder.com/icons/285680/camera_icon
 
+To the reviewing team - I HAVE USED AI AT SOME PLACES TO BEAUTIFY CODE AND MAKE IT READABLE, thanks!
 
 
 
